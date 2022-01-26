@@ -322,17 +322,17 @@
 
 #### write a prog to print the digits presents inside a string
 
-# string = "python2welcome"
-#
-# for ele in string:
-#     if ele.isdigit():
-#         print(ele)
+string = "python2welcome"
+
+for ele in string:
+    if ele.isdigit():
+        print(ele)
 
 # string = "python2welcome"
-#
-for ele in string:
-    if "0" <= ele <= "9":
-        print(ele)
+# #
+# for ele in string:
+#     if "0" <= ele <= "9":
+#         print(ele)
 
 #### write a prog to count the number of  digits presents inside a string
 
