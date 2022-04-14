@@ -145,14 +145,15 @@
 
 ###########
 
-string = "ABHI_patil1234"
-# string = input(r"enter a string with special characters : ")
-small = 0
-capital = 0
-for item in string:
-    if item.islower():
-        small += 1
-    elif item.isupper():
-        capital += 1
-print("Number of small Characters : ", (small))
-print("Number of Capital Characters : ", (capital))
+# string = "ABHI_patil1234"
+# # string = input(r"enter a string with special characters : ")
+# small = 0
+# capital = 0
+# for item in string:
+#     if item.islower():
+#         small += 1
+#     elif item.isupper():
+#         capital += 1
+# print("Number of small Characters : ", small)
+# print("Number of Capital Characters : ", capital)
+

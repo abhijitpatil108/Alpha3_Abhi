@@ -1,0 +1,20 @@
+what are the name spaces in python?
+What is the difference between.py and .pyc file?
+difference between list and dictionary?
+what are inbuilt data types?
+How do you convert a number into string?
+what is monkey patching?
+what is inheritance?
+what is polymorphism?
+encapsulation?
+tell brief about slicing?
+what are keywords in python tell some example about that?
+smoke and sanity testing?
+tell about defect life cycle?
+explain about frame work that related to your project?
+you have 50 regression test cases you have to deploy the project tomorrow and you were only qa in your team how do you handle the situation?
+you raised a defect and that defect was consultancy rejected by the developer how do you handle the situation?
+sql max salary query?
+question related to joins?
+triggers in sql?
+Sdlc stlc
