@@ -6,6 +6,7 @@ from collections import Counter
 # for char in string_:
 #     count += 1
 # print(count)
+from math import prod
 
 '''2. Write a program to reverse a string without using any inbuilt functions.'''
 
@@ -489,4 +490,374 @@ sentence = "Hello welcome to python programming language selenium webdriver poom
 #             else:
 #                 d[word] += 1
 # print(d)
+
+'''hexadecimal to binary conversion'''
+
+'''HCF and LCM'''
+
+# def hcf(a, b):
+#     temp = sorted((a, b))
+#     lis = [temp[0] // num for num in range(1, 10) if temp[0] % num == 0]
+#     for num in lis:
+#         if temp[-1] % num == 0:
+#             return num
+#             # print(f"HCF of {a} and {b} is {num}")
+#             # break
+#     else:
+#         return 1
+#         print(f"HCF of {a} and {b} is {1}")
+
+# print(hcf(18, 32))
+
+# def hcf(*a):
+#     temp = sorted((a))
+#     lis = [temp[-2] // num for num in range(1, 10) if temp[-2] % num == 0]
+#     for num in lis:
+#         if temp[-1] % num == 0:
+#             return num
+#             # print(f"HCF of {a} is {num}")
+#             # break
+#     else:
+#         return 1
+#         # print(f"HCF of {a} is {1}")
+#
+# hcf(24, 36, 12)
+
+# def lcm(a, b):
+#     n1 = hcf(a, b)
+#     print(n1)
+#     res = a // n1 * b // n1 * n1
+#     return f"lcm of {a} and {b} is {res}"
+
+# print(lcm(18, 27))
+
+# def hcf(*a):
+#     temp = sorted((a))
+#     print(temp)
+#     r = list(range(1, 10))
+#     print(r)
+#     lis = []
+#     # lis = [[temp[-2] // num, num] for num in range(1, 10) if temp[-2] % num == 0]
+#     # lis = [temp[-2] // num for num in range(1, 10) if temp[-2] % num == 0]
+#     for num in r:
+#         if temp[-2] % num == 0:
+#             lis.extend((temp[-2] // num, num))
+#     print(lis)
+#     lis1 = sorted(lis, reverse=True)
+#     # l = sorted(lis + r)
+#     # print(l)
+#     for num in lis1:
+#         if temp[-1] % num == 0:
+#             return num
+#             # print(f"HCF of {a} is {num}")
+#             # break
+#     else:
+#         return 1
+#         # print(f"HCF of {a} is {1}")
+
+# def hcf(*a):
+#     temp = sorted((a))
+#     lis = []
+#     for num in range(1, 10):
+#         if temp[0] % num == 0:
+#             lis.extend((temp[0] // num, num))
+#     lis1 = sorted(set(lis), reverse=True)
+#     # print(lis1)
+#     for num in lis1:
+#         s = [t % num for t in temp]
+#         # print(s)
+#         if sum(s) ==  0:
+#             return num
+#         else:
+#             continue
+# # print(hcf(136, 170, 255))
+# # print(hcf(15, 20, 25))
+# def lcm(*a):
+#     n1 = hcf(*a)
+#     res = prod((num//n1 for num in a))
+#     res1 = hcf(res, n1)
+#     mul = 0
+#     if res1 == n1:
+#         mul = n1
+#     else:
+#         mul = n1 // res1
+#     print(res1)
+#     return f"HCF of {a} is {n1} and LCM is {res*mul}"
+# print(lcm(5536, 3332))
+# print(lcm(832, 1658))
+# print(lcm(15, 20, 25))
+# print(lcm(184, 230, 276))
+# print(lcm(136, 170, 255))
+
+'''HCF new'''
+# lis = []
+# def enter_num():
+#     tn = int(input("HCF for 2 numbers or 3 numbers? enter 2 or 3: "))
+#     if tn == 2:
+#         num1 = int(input("number1 : "))
+#         num2 = int(input("number2 : "))
+#         lis.append(num1)
+#         lis.append(num2)
+#     elif tn == 3:
+#         num1 = int(input("number1 : "))
+#         num2 = int(input("number2 : "))
+#         num3 = int(input("number3 : "))
+#         lis.append(num1)
+#         lis.append(num2)
+#         lis.append(num3)
+#     else:
+#         print("enter either 2 or 3 numbers")
+#         return enter_num()
+# enter_num()
+# lis = sorted(lis)
+# p =[]
+# for num in lis:
+#     for n in range(2, (num//2)+1):
+#         if num % n == 0:
+#             break
+#         else:
+#             pass
+#     else:
+#         p.append(num)
+# p = sorted(p)
+# print(p)
+# if len(p) > 1:
+#     print(f"HCF is {1}")
+# elif len(p) == 1 and p[0] > lis[0]:
+#     print(f"HCF is {1}")
+# elif len(p) == 1 and p[0] == lis[0]:
+#     while p[-1] < lis[-1]:
+#         temp = p[-1]+p[0]
+#         p.append(temp)
+#     if set(lis).issubset(set(p)):
+#         print(f"HCF is {p[0]}")
+#     else:
+#         print(f"HCF is {1}")
+# elif len(p) == 0 and len(lis) == 3:
+#     for n in range(lis[0], 2, -1):
+#         if lis[1] % n == 0 and lis[2] % n == 0:
+#             print(f"HCF of {lis} is {n}")
+#     else:
+#         print(f"HCF of {lis} is {1}")
+# elif len(p) == 0 and len(lis) == 2:
+#     for n in range(lis[0], 2, -1):
+#         if lis[1] % n == 0:
+#             print(f"HCF of {lis} is {n}")
+#             break
+#     else:
+#         print(f"HCF of {lis} is {1}")
+
+
+'''Half solid diamond'''
+'''
+3
+44
+555
+6666
+555
+44
+3
+'''
+'''1st'''
+s = int(input("Enter the size of the diamond pattern to be printed : "))  #for even input it will be input +1
+n = int(input("Enter the starting number of diamond pattern : "))
+# s = 7  #'''size of the diamond (length or width)'''
+# n = 3  #'''Starting input to be printed'''
+r1 = list(range(1, (s//2)+2))
+r2 = list(reversed(r1))
+r2.pop(0)
+r = r1 + r2
+temp = ''
+count = 0
+for i in r:
+    for j in range(1, i+1):
+        temp += str(n)
+    print(temp)
+    count += 1
+    if count < s//2 +1:
+        n += 1
+    else:
+        n -= 1
+    temp = ''
+
+'''2nd'''
+s = int(input("Enter 'even' number as size of the diamond pattern  : "))   #for odd input it will odd-1
+n = int(input("Enter the starting number of diamond pattern: "))
+# s = 8  #'''size of the diamond '''
+# n = 1  #'''Starting input to be printed'''
+r1 = list(range(1, (s//2)+1))
+r2 = list(reversed(r1))
+r = r1 + r2
+temp = ''
+count = 0
+for i in r:
+    for j in range(1, i+1):
+        temp += str(n)+" "
+    temp = temp.replace(' ', '*')
+    temp = temp[::-1].replace('*', '', 1)
+    print(temp[::-1])
+    count += 1
+    if count < s//2:
+        n += 1
+    elif count == s//2:
+        n += 0
+    else:
+        n -= 1
+    temp = ''
+
+'''3rd'''
+def input_():
+    s1 = int(input("Enter only 'even' number as size of the diamond pattern  : "))
+    if s1 % 2 == 0:
+        return s1
+    else:
+        print("Expected size Even, but entered odd")
+        return input_()
+s = input_()
+n = int(input("enter the starting number of diamond pattern: ")) - 1
+r1 = list(range(1, (s//2)+1))
+r2 = list(reversed(r1))
+r = r1 + r2
+temp = ''
+count = 0
+for i in r:
+    for j in range(1, i+1):
+        if count < s // 2:
+            n += 1
+        elif count == s // 2:
+            n = n1 - (s-i) + j
+        else:
+            n = n2 - i + j
+        temp += str(n) + " "
+    temp = temp.replace(' ', '*')
+    temp = temp[::-1].replace('*', '', 1)
+    temp1 = temp[::-1]
+    n1 = n
+    n2 = n - i
+    print(temp1)
+    count += 1
+    temp = ''
+
+'''4th'''
+s = int(input("Enter the height of the diamond pattern to be printed : "))
+#for even input output height will be input +3, for odd output height will be input +2
+n = int(input("enter the starting number of diamond pattern: "))
+r1 = list(range(n-1, n+(s//2 + 1)))
+r2 = list(reversed(r1))
+r2.pop(0)
+r = r1 + r2
+# print(r)
+temp = ''
+filler1 = ''
+filler2 = ''
+for i in r:
+    for j in range(n, i + 1):
+        filler1 = filler1 + ' ' + str(j)
+        filler2 = str(j) + ' ' + filler2
+    if 10 > i >= n:
+        temp = '*' + filler1 + filler2[1:len(filler1)] + '*'
+    elif i >= 10:
+        temp = '*' + filler1 + filler2[2:len(filler1)] + '*'
+    else:
+        temp = '*'
+    print(temp)
+    filler1 = ''
+    filler2 = ''
+
+'''4th same as above but a bit complex and raw one....can be simplified'''
+# s = int(input("Enter the height of the diamond pattern to be printed : "))
+# #for even input output height will be input +3, for odd output height will be input +2
+# n = int(input("enter the starting number of diamond pattern: "))
+# r1 = list(range(n-1, n+(s//2 + 1)))
+# r2 = list(reversed(r1))
+# r2.pop(0)
+# r = r1 + r2
+# print(r)
+# temp = ''
+# filler1 = ''
+# filler2 = ''
+# for i in r:
+#     for j in range(n, i + 1):
+#         filler1 = filler1 + ' ' + str(j)
+#         filler2 = str(j) + ' ' +  filler2
+#     # print(filler)
+#     if 10 > i >= n:
+#         # temp = '*' + filler1 + filler1[:len(filler1) - 1][::-1] + '*'
+#         temp = '*' + filler1 + filler2[1:len(filler1)] + '*'
+#     elif i >= 10:
+#         # temp = '*' + filler1 + filler1[:len(filler1) - 2][::-1] + '*'
+#         temp = '*' + filler1 + filler2[2:len(filler1)] + '*'
+#     else:
+#         temp = '*'
+#     # temp = ' '.join(temp)
+#     print(temp)
+#     filler1 = ''
+#     filler2 = ''
+
+
+
+
+
+# for i in r:
+#     filler = filler + str(i)
+#     if len(temp) > 1:
+#         temp = '*' + filler + filler[:len(filler)-1][::-1] + '*'
+#         # temp = temp.replace('0', '')
+#     else:
+#         temp = '*' + str(i)
+#     temp = temp.replace('0', '')
+#     # filler = filler.replace(filler[-1], '')
+#     print(temp)
+
+
+
+#
+#
+# s = int(input("Enter the height of the diamond pattern to be printed : "))  #for even input it will be input +1
+# n = int(input("Enter the starting number of diamond pattern : "))
+# # s = 7  #'''size of the diamond (length or width)'''
+# # n = 3  #'''Starting input to be printed'''
+# # r1 = list(range(1, (s//2)+2))
+# r1 = list(range(s//2 + 1))
+# r2 = list(reversed(r1))
+# r2.pop(0)
+# r = r1 + r2
+# print(r)
+# temp = ''
+# filler = ''
+# count = 0
+# for i in r:
+#     c1 = list(range(i+1))
+#     c2 = list(reversed(c1))
+#     c2.pop(0)
+#     c = c1 + c2
+#     # print(c)
+#     for j in c:
+#         filler += str(j)
+#     temp = '*' + filler + '*'
+#     temp = temp.replace('0', '')
+#     temp = ' '.join(temp)
+#     print(temp)
+#     temp = ''
+#     filler = ''
+
+    #
+    # for j in range(1, i+1):
+    #     temp += str(n)
+    # print(temp)
+    # count += 1
+    # if count < s//2 +1:
+    #     n += 1
+    # else:
+    #     n -= 1
+    # temp = ''
+
+
+
+
+
+
+
+
+
 
